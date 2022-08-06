@@ -40,7 +40,7 @@ public class BotonSumar : MonoBehaviour
              pastel7.transform.position = new Vector2(-1.23f,-0.010f);
              textoCantidad1.text = "";
              textoCantidad2.text = "";
-             resultado.text = "7";
+             //resultado.text = "7";
          
         
     }
