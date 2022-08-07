@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuInicial.unity
     guid: 225604982c0462948898284f37d216f8
   - enabled: 1
+    path: Assets/Scenes/MenuBienvenida.unity
+    guid: 9dcd333b4791666409ddc331e7e2ea2c
+  - enabled: 1
     path: Assets/Scenes/minijuego3.unity
     guid: f09c8fedc9597b042820989c861c5d31
   m_configObjects: {}
