@@ -10,4 +10,8 @@ public class MenuInicial : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
+    public void loadScene(string sceneName){
+        SceneManager.LoadScene(sceneName);
+
+    }
 }
