@@ -6,6 +6,9 @@ TagManager:
   tags:
   - pastel1
   - contenedor
+  - fruta
+  - DragParent
+  - cuadrado
   layers:
   - Default
   - TransparentFX
