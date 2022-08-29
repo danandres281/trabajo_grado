@@ -27,6 +27,9 @@ public class DropSlot : MonoBehaviour , IDropHandler
       public void OnDrop(PointerEventData data)
     {
         if(!cuadrado && !item){
+            item = DragHandler.itemDragging;
+            item.transform.SetParent(transform);
+            item.transform.position = transform.position;
             
             StartCoroutine(AparecerTriangulo(triangulo));
             StartCoroutine(DesaparecerCuadrado(item));
