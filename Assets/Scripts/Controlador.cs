@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Controlador : MonoBehaviour
 {
@@ -96,6 +97,9 @@ public class Controlador : MonoBehaviour
             circulo.transform.position = circuloInitialPos;
         }
 
+    }
+    public void LoadScene(string scenename){
+        SceneManager.LoadScene(scenename);
     }
 
     
