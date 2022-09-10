@@ -15,6 +15,7 @@ public class DetectarTriangulo : MonoBehaviour
     public GameObject instrucciones;
     public GameObject incorrecto;
     public GameObject  menuCuadrado;
+     public GameObject menuCirculo;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +36,7 @@ public class DetectarTriangulo : MonoBehaviour
         
     }
     private void OnMouseDown(){
-        if(triangulo.tag == "triangulo"){
+        if(triangulo.tag == "triangulo" && menuCuadrado.activeSelf == false && menuCirculo.activeSelf == false){
             Debug.Log(" siiii Es un triangulo");
             correcto.SetActive(true);
             instrucciones.SetActive(false);

@@ -10,6 +10,7 @@ TagManager:
   - DragParent
   - cuadrado
   - triangulo
+  - circulo
   layers:
   - Default
   - TransparentFX

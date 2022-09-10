@@ -15,6 +15,7 @@ public class DetectarCuadrado : MonoBehaviour
     public GameObject instrucciones;
     public GameObject incorrecto;
     public GameObject  menuCirculo;
+    public GameObject  menuTriangulo;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,17 +39,17 @@ public class DetectarCuadrado : MonoBehaviour
     }
     private void OnMouseDown(){
         Debug.Log("es un cuadrado");
-        if(cuadrado.tag == "cuadrado"){
+        if(cuadrado.tag == "cuadrado" && menuTriangulo.activeSelf == false && menuCirculo.activeSelf == false){
             Debug.Log("es un cuadrado");
             correcto.SetActive(true);
             instrucciones.SetActive(false);
-            //StartCoroutine(AparecerMenuCuadrado(menuCuadrado));
-            //StartCoroutine(DesaparecerMenuCorrecto(correcto));
+            StartCoroutine(AparecerMenuCirculo(menuCirculo));
+            StartCoroutine(DesaparecerMenuCorrecto(correcto));
         }
         else{
             StartCoroutine(DesaparecerMenuIncorrecto(incorrecto));
         }
-        Debug.Log("Es un triangulo");
+        Debug.Log("Es un cuadrado");
 
     }
     public IEnumerator DesaparecerMenuIncorrecto(GameObject incorrecto){
@@ -60,10 +61,10 @@ public class DetectarCuadrado : MonoBehaviour
         yield return new WaitForSecondsRealtime(2);
         correcto.SetActive(false);
     }
-    /*public IEnumerator AparecerMenuCuadrado(GameObject incorrecto){
+    public IEnumerator AparecerMenuCirculo(GameObject incorrecto){
         
         yield return new WaitForSecondsRealtime(3);
-        menuCuadrado.SetActive(true);
+        menuCirculo.SetActive(true);
         
-    }*/
+    }
 }
