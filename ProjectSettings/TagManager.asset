@@ -9,6 +9,7 @@ TagManager:
   - fruta
   - DragParent
   - cuadrado
+  - triangulo
   layers:
   - Default
   - TransparentFX
