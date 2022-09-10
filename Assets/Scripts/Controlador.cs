@@ -8,6 +8,8 @@ public class Controlador : MonoBehaviour
     // Start is called before the first frame update
     
     public GameObject triangulo,cuadrado,circulo, slotCirculo, slotCuadrado, slotTriangulo, finJuego;
+    public AudioSource correcto;
+    public AudioSource incorrecto;
     //public GameObject finJuego;
     Vector2 trianguloInitialPos,cuadradoInitialPos,circuloInitialPos;
     void Start()
@@ -63,11 +65,15 @@ public class Controlador : MonoBehaviour
         float distancia = Vector3.Distance(triangulo.transform.position, slotTriangulo.transform.position);
         if(distancia < 50){
             triangulo.transform.position = slotTriangulo.transform.position;
+            correcto.Play();
+           
              StartCoroutine(AparecerCirculo(circulo));
         StartCoroutine(DesaparecerTriangulo(triangulo));
         }
         else{
+             
             triangulo.transform.position = trianguloInitialPos;
+            incorrecto.Play();
         }
 
     }
@@ -75,11 +81,13 @@ public class Controlador : MonoBehaviour
         float distancia = Vector3.Distance(cuadrado.transform.position, slotCuadrado.transform.position);
         if(distancia < 50){
             cuadrado.transform.position = slotCuadrado.transform.position;
+             correcto.Play();
             StartCoroutine(AparecerTriangulo(triangulo));
         StartCoroutine(DesaparecerCuadrado(cuadrado));
         }
         else{
             cuadrado.transform.position = cuadradoInitialPos;
+             incorrecto.Play();
         }
         
 
@@ -88,6 +96,7 @@ public class Controlador : MonoBehaviour
         float distancia = Vector3.Distance(circulo.transform.position, slotCirculo.transform.position);
         if(distancia < 50){
             circulo.transform.position = slotCirculo.transform.position;
+             correcto.Play();
             StartCoroutine(FinalizarJuego(finJuego));
             StartCoroutine(DesaparecerSlotTriangulo(slotTriangulo));
             StartCoroutine(DesaparecerSlotCuadrado(slotCuadrado));
@@ -95,6 +104,7 @@ public class Controlador : MonoBehaviour
         }
         else{
             circulo.transform.position = circuloInitialPos;
+             incorrecto.Play();
         }
 
     }
