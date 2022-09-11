@@ -10,6 +10,7 @@ public class Controlador : MonoBehaviour
     public GameObject triangulo,cuadrado,circulo, slotCirculo, slotCuadrado, slotTriangulo, finJuego;
     public AudioSource correcto;
     public AudioSource incorrecto;
+    public GameObject menuInformacion;
     //public GameObject finJuego;
     Vector2 trianguloInitialPos,cuadradoInitialPos,circuloInitialPos;
     void Start()
@@ -18,6 +19,7 @@ public class Controlador : MonoBehaviour
         cuadradoInitialPos = cuadrado.transform.position;
         circuloInitialPos = circulo.transform.position;
         finJuego.SetActive(false);
+        StartCoroutine(DesaparecerMenuInformacion(menuInformacion));
         
     }
     public IEnumerator AparecerTriangulo(GameObject triangulo){
@@ -31,6 +33,10 @@ public class Controlador : MonoBehaviour
      public IEnumerator DesaparecerCuadrado(GameObject cuadrado){
         yield return new WaitForSecondsRealtime(2);
         cuadrado.SetActive(false);
+    }
+    public IEnumerator DesaparecerMenuInformacion(GameObject menuInformacion){
+        yield return new WaitForSecondsRealtime(5);
+        menuInformacion.SetActive(false);
     }
      public IEnumerator DesaparecerTriangulo(GameObject triangulo){
         yield return new WaitForSecondsRealtime(2);
