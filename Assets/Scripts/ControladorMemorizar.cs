@@ -7,6 +7,7 @@ public class ControladorMemorizar : MonoBehaviour
     // Start is called before the first frame update
     public GameObject uno,dos,tres,cuatro,cinco,unoJugable,dosJugable,tresJugable,cuatroJugable,cincoJugable,slot1,slot2,slot3,slot4,slot5;
      Vector2 unoInitialPos,dosInitialPos,tresInitialPos,cuatroInitialPos, cincoInitialPos;
+     public AudioSource desaparecer;
     void Start()
     {
         unoInitialPos = unoJugable.transform.position;
@@ -118,22 +119,27 @@ public class ControladorMemorizar : MonoBehaviour
     public IEnumerator DesaparecerUno(GameObject uno){
         yield return new WaitForSecondsRealtime(1);
         uno.SetActive(false);
+        desaparecer.Play();
     }
     public IEnumerator DesaparecerDos(GameObject dos){
         yield return new WaitForSecondsRealtime(2);
         dos.SetActive(false);
+        desaparecer.Play();
     }
     public IEnumerator DesaparecerTres(GameObject tres){
         yield return new WaitForSecondsRealtime(3);
         tres.SetActive(false);
+        desaparecer.Play();
     }
     public IEnumerator DesaparecerCuatro(GameObject cuatro){
         yield return new WaitForSecondsRealtime(4);
         cuatro.SetActive(false);
+        desaparecer.Play();
     }
     public IEnumerator DesaparecerCinco(GameObject cinco){
         yield return new WaitForSecondsRealtime(5);
         cinco.SetActive(false);
+        desaparecer.Play();
     }
     public IEnumerator AparecerUno(GameObject unoJugable){
         yield return new WaitForSecondsRealtime(6);
