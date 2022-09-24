@@ -9,13 +9,16 @@ public class DeteccionObjetos : MonoBehaviour
 
     public List<Collider2D> listaObjetos = new List<Collider2D>();
     public GameObject fruta;
+    public TextMeshProUGUI numero;
+    public GameObject finJuego;
     //public Text textoCantidad1;
     private int cantidad = 0;
+    int n;
     public TextMeshProUGUI textoCantidad1;
     void Start()
     {
-        
-        
+        n = Random.Range(1,9);
+        numero.text = n.ToString();
     }
 
     // Update is called once per frame
@@ -25,7 +28,17 @@ public class DeteccionObjetos : MonoBehaviour
         if(listaObjetos.Count == 0){
             textoCantidad1.text = "";
         }
+        if(textoCantidad1.text == numero.text){
+            StartCoroutine(FinalizarJuego(finJuego));
+
+        }
         
+
+        
+    }
+     public IEnumerator FinalizarJuego(GameObject finJuego){
+        yield return new WaitForSecondsRealtime(1);
+        finJuego.SetActive(true);
     }
     void OnTriggerEnter2D(Collider2D col){
         Debug.Log("Entro");

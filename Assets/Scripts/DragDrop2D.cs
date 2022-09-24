@@ -19,7 +19,7 @@ public class DragDrop2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonDown(0)){
             hit = Physics2D.GetRayIntersection(cam.ScreenPointToRay(Input.mousePosition));
             if( hit.collider.tag == "fruta"){
                 focus = hit.transform;
@@ -35,7 +35,7 @@ public class DragDrop2D : MonoBehaviour
             mousePos.z = -cam.transform.position.z;
             pos = cam.ScreenToWorldPoint(mousePos);
             focus.position = new Vector3(pos.x, pos.y, focus.position.z);
-        }*/
+        }
         
     }
 }
