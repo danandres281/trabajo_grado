@@ -8,8 +8,11 @@ public class ControladorMemorizar : MonoBehaviour
     public GameObject uno,dos,tres,cuatro,cinco,unoJugable,dosJugable,tresJugable,cuatroJugable,cincoJugable,slot1,slot2,slot3,slot4,slot5;
      Vector2 unoInitialPos,dosInitialPos,tresInitialPos,cuatroInitialPos, cincoInitialPos;
      public AudioSource desaparecer;
+      public GameObject finJuego;
+      private ArrayList numeros;
     void Start()
     {
+         numeros = new ArrayList();
         unoInitialPos = unoJugable.transform.position;
          dosInitialPos = dosJugable.transform.position;
           tresInitialPos = tresJugable.transform.position;
@@ -29,7 +32,16 @@ public class ControladorMemorizar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(numeros.Count >= 5){
+            StartCoroutine(FinalizarJuego(finJuego));
+            
+        }
         
+    }
+
+     public IEnumerator FinalizarJuego(GameObject finJuego){
+        yield return new WaitForSecondsRealtime(1);
+        finJuego.SetActive(true);
     }
     public void DragUno(){
         unoJugable.transform.position = Input.mousePosition;
@@ -56,6 +68,7 @@ public class ControladorMemorizar : MonoBehaviour
         if(distancia < 50){
             unoJugable.transform.position = slot2.transform.position;
             dosJugable.SetActive(true);
+            numeros.Add("uno");
            
         }
         else{
@@ -69,7 +82,7 @@ public class ControladorMemorizar : MonoBehaviour
         if(distancia < 50){
             dosJugable.transform.position = slot5.transform.position;
             tresJugable.SetActive(true);
-           
+           numeros.Add("dos");
         }
         else{
              
@@ -82,7 +95,7 @@ public class ControladorMemorizar : MonoBehaviour
         if(distancia < 50){
             tresJugable.transform.position = slot1.transform.position;
             cuatroJugable.SetActive(true);
-           
+           numeros.Add("tres");
         }
         else{
              
@@ -95,7 +108,7 @@ public class ControladorMemorizar : MonoBehaviour
         if(distancia < 50){
             cuatroJugable.transform.position = slot4.transform.position;
             cincoJugable.SetActive(true);
-           
+           numeros.Add("cuatro");
         }
         else{
              
@@ -107,7 +120,7 @@ public class ControladorMemorizar : MonoBehaviour
         float distancia = Vector3.Distance(cincoJugable.transform.position, slot3.transform.position);
         if(distancia < 50){
             cincoJugable.transform.position = slot3.transform.position;
-           
+           numeros.Add("cinco");
         }
         else{
              
