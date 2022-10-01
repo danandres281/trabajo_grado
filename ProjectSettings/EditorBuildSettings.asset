@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 38059125518ab024b80174436de40674
+  - enabled: 1
+    path: Assets/Scenes/MenuMinijuegosNumeros.unity
+    guid: 46b518652572bc74ba6af3f285215dbe
   m_configObjects: {}
