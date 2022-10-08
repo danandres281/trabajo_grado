@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MinijuegoSumar.unity
     guid: 06f4dbf3090e5684cb4fb158df9ec86c
+  - enabled: 1
+    path: Assets/Scenes/MinijuegoRestar.unity
+    guid: 9133ca13b3add0a4e9fe36d6398700d6
   m_configObjects: {}

@@ -12,6 +12,7 @@ public class ControladorNumeros : MonoBehaviour
     public TextMeshProUGUI numero4;
     public TextMeshProUGUI numOperacion1;
     public TextMeshProUGUI numOperacion2;
+    public GameObject finJuego;
      public GameObject num1,num2,num3,correcto, slotCorrecto;
      Vector2 num1InitialPos,num2InitialPos,num3InitialPos, correctoInitialPos;
 
@@ -21,21 +22,39 @@ public class ControladorNumeros : MonoBehaviour
     int n4;
     int nOp1;
     int nOp2;
+    int s;
+    int d;
     void Start()
     {
          n = Random.Range(0,10);
-         numero1.text = n.ToString();
          
-          n3 = Random.Range(0,10);
-         numero3.text = n3.ToString();
+         s = Random.Range(1,10);
+          d = Random.Range(1,9);
+          
+         
           n4 = Random.Range(0,10);
-         numero4.text = n4.ToString();
-          nOp1 = Random.Range(0,10);
+          n3 = Random.Range(0,10);
+          nOp1 = Random.Range(1,10);
          numOperacion1.text = nOp1.ToString();
-         nOp2 = Random.Range(0,10);
+         nOp2 = Random.Range(1,10);
          numOperacion2.text = nOp2.ToString();
           n2 = (nOp1 + nOp2);
+          if(n2 == n3){
+
+            n3 = (n3 + s);
+            Debug.Log(n3);
+          }
+          if(n2 == n4){
+            n4 = (n4 + d);
+          }
+          if(n2 == n){
+            n = (n4 + d);
+          }
+
+          numero3.text = n3.ToString();
+           numero4.text = n4.ToString();
          numero2.text = n2.ToString();
+         numero1.text = n.ToString();
          num1InitialPos = num1.transform.position;
          num2InitialPos = num2.transform.position;
          num3InitialPos = num3.transform.position;
@@ -46,6 +65,11 @@ public class ControladorNumeros : MonoBehaviour
     void Update()
     {
         
+    }
+
+     public IEnumerator FinalizarJuego(GameObject finJuego){
+        yield return new WaitForSecondsRealtime(1);
+        finJuego.SetActive(true);
     }
 
      public void DragNumero1(){
@@ -68,6 +92,9 @@ public class ControladorNumeros : MonoBehaviour
         float distancia = Vector3.Distance(correcto.transform.position, slotCorrecto.transform.position);
         if(distancia < 50){
             correcto.transform.position = slotCorrecto.transform.position;
+            slotCorrecto.SetActive(false);
+            StartCoroutine(FinalizarJuego(finJuego));
+
            
         }
         else{
