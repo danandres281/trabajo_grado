@@ -11,15 +11,22 @@ public class Controlador : MonoBehaviour
     public AudioSource correcto;
     public AudioSource incorrecto;
     public GameObject menuInformacion;
+   public GameObject[] figuras;
+   int n;
+    private ArrayList numeros;
+    
     //public GameObject finJuego;
     Vector2 trianguloInitialPos,cuadradoInitialPos,circuloInitialPos;
     void Start()
     {
+        numeros = new ArrayList();
+        n = Random.Range(0 , figuras.Length);
         trianguloInitialPos = triangulo.transform.position;
         cuadradoInitialPos = cuadrado.transform.position;
         circuloInitialPos = circulo.transform.position;
         finJuego.SetActive(false);
         StartCoroutine(DesaparecerMenuInformacion(menuInformacion));
+        figuras[n].SetActive(true);
         
     }
     public IEnumerator AparecerTriangulo(GameObject triangulo){
@@ -29,6 +36,10 @@ public class Controlador : MonoBehaviour
     public IEnumerator AparecerCirculo(GameObject circulo){
         yield return new WaitForSecondsRealtime(2);
         circulo.SetActive(true);
+    }
+    public IEnumerator AparecerCuadrado(GameObject cuadrado){
+        yield return new WaitForSecondsRealtime(2);
+        cuadrado.SetActive(true);
     }
      public IEnumerator DesaparecerCuadrado(GameObject cuadrado){
         yield return new WaitForSecondsRealtime(2);
@@ -41,6 +52,10 @@ public class Controlador : MonoBehaviour
      public IEnumerator DesaparecerTriangulo(GameObject triangulo){
         yield return new WaitForSecondsRealtime(2);
         triangulo.SetActive(false);
+    }
+    public IEnumerator DesaparecerCirculo(GameObject circulo){
+        yield return new WaitForSecondsRealtime(2);
+        circulo.SetActive(false);
     }
     public IEnumerator FinalizarJuego(GameObject finJuego){
         yield return new WaitForSecondsRealtime(2);
@@ -72,7 +87,7 @@ public class Controlador : MonoBehaviour
         if(distancia < 50){
             triangulo.transform.position = slotTriangulo.transform.position;
             correcto.Play();
-           
+           numeros.Add("triangulo");
              StartCoroutine(AparecerCirculo(circulo));
         StartCoroutine(DesaparecerTriangulo(triangulo));
         }
@@ -87,6 +102,7 @@ public class Controlador : MonoBehaviour
         float distancia = Vector3.Distance(cuadrado.transform.position, slotCuadrado.transform.position);
         if(distancia < 50){
             cuadrado.transform.position = slotCuadrado.transform.position;
+            numeros.Add("cuadrado");
              correcto.Play();
             StartCoroutine(AparecerTriangulo(triangulo));
         StartCoroutine(DesaparecerCuadrado(cuadrado));
@@ -103,9 +119,11 @@ public class Controlador : MonoBehaviour
         if(distancia < 50){
             circulo.transform.position = slotCirculo.transform.position;
              correcto.Play();
-            StartCoroutine(FinalizarJuego(finJuego));
-            StartCoroutine(DesaparecerSlotTriangulo(slotTriangulo));
-            StartCoroutine(DesaparecerSlotCuadrado(slotCuadrado));
+             StartCoroutine(DesaparecerCirculo(circulo));
+             StartCoroutine(AparecerCuadrado(cuadrado));
+             numeros.Add("circulo");
+            //StartCoroutine(FinalizarJuego(finJuego));
+            
             
         }
         else{
@@ -123,6 +141,13 @@ public class Controlador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(numeros.Count >= 3){
+            StartCoroutine(FinalizarJuego(finJuego));
+            StartCoroutine(DesaparecerSlotTriangulo(slotTriangulo));
+            StartCoroutine(DesaparecerSlotCuadrado(slotCuadrado));
+             StartCoroutine(DesaparecerTriangulo(triangulo));
+              StartCoroutine(DesaparecerCuadrado(cuadrado));
+               StartCoroutine(DesaparecerCirculo(circulo));
+        }
     }
 }

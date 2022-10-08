@@ -602,6 +602,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listaObjetos: []
   fruta: {fileID: 0}
+  numero: {fileID: 0}
+  finJuego: {fileID: 0}
+  incorrecto: {fileID: 0}
   textoCantidad1: {fileID: 0}
 --- !u!61 &670340876
 BoxCollider2D:
@@ -1638,7 +1641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1407859736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2530,6 +2533,10 @@ MonoBehaviour:
   correcto: {fileID: 1200871510}
   incorrecto: {fileID: 694692020}
   menuInformacion: {fileID: 1941460739}
+  figuras:
+  - {fileID: 1881359146}
+  - {fileID: 1407859735}
+  - {fileID: 1413935300}
 --- !u!4 &1905589756
 Transform:
   m_ObjectHideFlags: 0
