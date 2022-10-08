@@ -11,6 +11,7 @@ public class DeteccionObjetos : MonoBehaviour
     public GameObject fruta;
     public TextMeshProUGUI numero;
     public GameObject finJuego;
+    public GameObject incorrecto;
     //public Text textoCantidad1;
     private int cantidad = 0;
     int n;
@@ -28,10 +29,7 @@ public class DeteccionObjetos : MonoBehaviour
         if(listaObjetos.Count == 0){
             textoCantidad1.text = "";
         }
-        if(textoCantidad1.text == numero.text){
-            StartCoroutine(FinalizarJuego(finJuego));
-
-        }
+        
         
 
         
@@ -54,5 +52,19 @@ public class DeteccionObjetos : MonoBehaviour
     void OnTriggerExit2D(Collider2D col){
         listaObjetos.Remove(col);
        
+    }
+     public IEnumerator AparecerMenuincorrecto(GameObject incorrecto){
+        yield return new WaitForSecondsRealtime(2);
+        incorrecto.SetActive(true);
+    }
+
+    public void finalizar(){
+        if(textoCantidad1.text == numero.text){
+            StartCoroutine(FinalizarJuego(finJuego));
+
+        }
+        else{
+            StartCoroutine(AparecerMenuincorrecto(incorrecto));
+        }
     }
 }
