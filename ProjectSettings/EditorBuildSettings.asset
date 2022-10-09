@@ -30,9 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MinijuegoSecuencias.unity
     guid: edcb39c8891968040ae32abb73ece342
   - enabled: 1
-    path: Assets/Scenes/MinijuegoMemorizar.unity
-    guid: a4e6ed7d264072f419e5b8209d55af18
-  - enabled: 1
     path: Assets/Scenes/MenuMinijuegoSimbolos.unity
     guid: a607b9d76ea365940b6e6f79b5624cb8
   - enabled: 1
@@ -53,4 +50,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MinijuegoUbicarSimbolo.unity
     guid: 79122b454534b23489401d3ad1ddf586
+  - enabled: 1
+    path: Assets/Scenes/MinijuegoMemorizar.unity
+    guid: a4e6ed7d264072f419e5b8209d55af18
+  - enabled: 1
+    path: Assets/Scenes/MinijuegoMemorizar2.unity
+    guid: 929d56fec56218f4495d7084d40e55bc
+  - enabled: 1
+    path: Assets/Scenes/MinijuegoMemorizar3.unity
+    guid: 53254d0c6909ff54fa373f88e6dfa74a
   m_configObjects: {}

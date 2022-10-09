@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,7 +15,12 @@ public class MenuInicial : MonoBehaviour
 
     }
     public void loadRandomScene(){
-        int index = Random.Range(14,16);
+        int index = Random.Range(13,15);
+        SceneManager.LoadScene(index);
+        Debug.Log(index);
+    }
+     public void loadRandomScene2(){
+        int index = Random.Range(15,17);
         SceneManager.LoadScene(index);
         Debug.Log(index);
     }
