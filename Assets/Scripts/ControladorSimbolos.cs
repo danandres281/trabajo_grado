@@ -27,10 +27,10 @@ public class ControladorSimbolos : MonoBehaviour
         simbolos = new ArrayList();
         sumaInitialPosition = suma.transform.position;
         restaInitialPosition = resta.transform.position;
-        n = Random.Range(0,10);
-        n2 = Random.Range(0,10);
-        n3 = Random.Range(0,10);
-        n4 = Random.Range(0,9);
+        n = Random.Range(1,10);
+        n2 = Random.Range(1,10);
+        n3 = Random.Range(1,10);
+        n4 = Random.Range(1,9);
         numero1.text = n.ToString();
         numero2.text = n2.ToString();
          numero3.text = n3.ToString();

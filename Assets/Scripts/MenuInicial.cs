@@ -14,4 +14,9 @@ public class MenuInicial : MonoBehaviour
         SceneManager.LoadScene(sceneName);
 
     }
+    public void loadRandomScene(){
+        int index = Random.Range(14,16);
+        SceneManager.LoadScene(index);
+        Debug.Log(index);
+    }
 }

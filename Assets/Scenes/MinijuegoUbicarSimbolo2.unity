@@ -1803,16 +1803,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suma: {fileID: 1750900331}
   resta: {fileID: 1580576443}
-  slotSuma: {fileID: 2068752208}
-  slotResta: {fileID: 549787637}
+  slotSuma: {fileID: 549787637}
+  slotResta: {fileID: 2068752208}
   informacion: {fileID: 221954668}
   finJuego: {fileID: 1066406135}
-  numero1: {fileID: 1497332024}
-  numero2: {fileID: 1021271976}
-  numero3: {fileID: 575975029}
-  numero4: {fileID: 1899062054}
-  resultado: {fileID: 1227347697}
-  resultado2: {fileID: 699094430}
+  numero1: {fileID: 575975029}
+  numero2: {fileID: 1899062054}
+  numero3: {fileID: 1497332024}
+  numero4: {fileID: 1021271976}
+  resultado: {fileID: 699094430}
+  resultado2: {fileID: 1227347697}
 --- !u!4 &1406065728
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,7 +34,7 @@ public class ControladorSecuencias : MonoBehaviour
         }
     }
     public IEnumerator FinalizarJuego(GameObject finJuego){
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(1);
         finJuego.SetActive(true);
         finJuego.SetActive(true);
             imagen1.SetActive(false);

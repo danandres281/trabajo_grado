@@ -36,9 +36,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuMinijuegoSimbolos.unity
     guid: a607b9d76ea365940b6e6f79b5624cb8
   - enabled: 1
-    path: Assets/Scenes/MinijuegoUbicarSimbolo.unity
-    guid: 79122b454534b23489401d3ad1ddf586
-  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 38059125518ab024b80174436de40674
   - enabled: 1
@@ -50,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MinijuegoRestar.unity
     guid: 9133ca13b3add0a4e9fe36d6398700d6
+  - enabled: 1
+    path: Assets/Scenes/MinijuegoUbicarSimbolo2.unity
+    guid: 35c3227d4d4afd34987f7a87055c81fe
+  - enabled: 1
+    path: Assets/Scenes/MinijuegoUbicarSimbolo.unity
+    guid: 79122b454534b23489401d3ad1ddf586
   m_configObjects: {}
