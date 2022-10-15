@@ -2127,6 +2127,11 @@ MonoBehaviour:
   num3: {fileID: 1387550002}
   correcto: {fileID: 767983533}
   slotCorrecto: {fileID: 1908689175}
+  numeros:
+  - {fileID: 812091431}
+  - {fileID: 767983533}
+  - {fileID: 222065694}
+  - {fileID: 1387550002}
 --- !u!4 &1455703429
 Transform:
   m_ObjectHideFlags: 0

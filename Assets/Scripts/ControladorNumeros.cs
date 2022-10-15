@@ -15,7 +15,15 @@ public class ControladorNumeros : MonoBehaviour
     public GameObject finJuego;
      public GameObject num1,num2,num3,correcto, slotCorrecto;
      Vector2 num1InitialPos,num2InitialPos,num3InitialPos, correctoInitialPos;
-
+     public GameObject[] numeros;
+     private Vector3[] posiciones = {
+        new Vector3(232f, 57.5f, 0.0f),
+        new Vector3(353f, 57.5f, 0.0f),
+        new Vector3(630f, 57.5f, 0.0f),
+        new Vector3(487f, 57.5f, 0.0f),
+    };
+    private Vector3 tempPosition;
+    int i;
     int n;
     int n2;
     int n3;
@@ -26,12 +34,29 @@ public class ControladorNumeros : MonoBehaviour
     int d;
     void Start()
     {
+        i = Random.Range(0, posiciones.Length);
          n = Random.Range(0,10);
-         
+         Debug.Log(num1.transform.position + " numero 1");
+         Debug.Log(num2.transform.position + " numero 2");
+         Debug.Log(num3.transform.position + " numero 3");
+         Debug.Log(correcto.transform.position + " numero correcto");
          s = Random.Range(1,10);
           d = Random.Range(1,9);
-          
-         
+           tempPosition = correcto.transform.position;
+         correcto.transform.position = posiciones[i];
+        
+         if(correcto.transform.position == num1.transform.position){
+            Debug.Log("es igual al numero 1");
+            num1.transform.position = tempPosition;
+         }
+         if(correcto.transform.position == num2.transform.position){
+            Debug.Log("es igual al numero 2");
+            num2.transform.position = tempPosition;
+         }
+         if(correcto.transform.position == num3.transform.position){
+            Debug.Log("es igual al numero 3");
+            num3.transform.position = tempPosition;
+         }
           n4 = Random.Range(0,10);
           n3 = Random.Range(0,10);
           nOp1 = Random.Range(1,10);
