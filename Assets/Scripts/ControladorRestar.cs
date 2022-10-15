@@ -14,7 +14,14 @@ public class ControladorRestar : MonoBehaviour
     public GameObject finJuego;
      public GameObject num1,num2,num3,correcto, slotCorrecto;
      Vector2 num1InitialPos,num2InitialPos,num3InitialPos, correctoInitialPos;
-
+     private Vector3[] posiciones = {
+        new Vector3(353f, 57.5f, 0.0f),
+        new Vector3(630f, 57.5f, 0.0f),
+        new Vector3(495f, 57.5f, 0.0f),
+        new Vector3(198f, 57.5f, 0.0f),
+    };
+    private Vector3 tempPosition;
+    int i;
     int n;
     int n2;
     int n3;
@@ -25,13 +32,31 @@ public class ControladorRestar : MonoBehaviour
     int d;
     void Start()
     {
+         i = Random.Range(0, posiciones.Length);
          n = Random.Range(0,10);
-         
+         Debug.Log(num1.transform.position + " numero 1");
+        Debug.Log(num2.transform.position + " numero 2");
+        Debug.Log(num3.transform.position + " numero 3");
+        Debug.Log(correcto.transform.position + " numero correcto");
          s = Random.Range(1,10);
           d = Random.Range(1,9);
           n3 = Random.Range(0,10);
          
           n4 = Random.Range(0,10);
+          tempPosition = correcto.transform.position;
+         correcto.transform.position = posiciones[i];
+        
+         if(correcto.transform.position == num1.transform.position){
+           
+            num1.transform.position = tempPosition;
+         }
+         if(correcto.transform.position == num2.transform.position){
+            num2.transform.position = tempPosition;
+         }
+         if(correcto.transform.position == num3.transform.position){
+           
+            num3.transform.position = tempPosition;
+         }
          
           nOp1 = Random.Range(0,10);
          numOperacion1.text = nOp1.ToString();
