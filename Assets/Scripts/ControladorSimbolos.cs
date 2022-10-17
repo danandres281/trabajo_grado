@@ -16,6 +16,7 @@ public class ControladorSimbolos : MonoBehaviour
     public TextMeshProUGUI numero4;
     public TextMeshProUGUI resultado;
     public TextMeshProUGUI resultado2;
+    public AudioSource positivo;
      private ArrayList simbolos;
     int n; 
     int n2;
@@ -83,6 +84,7 @@ public class ControladorSimbolos : MonoBehaviour
             suma.transform.position = slotSuma.transform.position;
             slotSuma.SetActive(false);
            simbolos.Add("suma");
+           positivo.Play();
         }
         else{
              
@@ -99,6 +101,7 @@ public class ControladorSimbolos : MonoBehaviour
             resta.transform.position = slotResta.transform.position;
             slotResta.SetActive(false);
              simbolos.Add("resta");
+             positivo.Play();
            
         }
         else{
