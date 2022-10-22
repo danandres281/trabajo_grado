@@ -13,6 +13,7 @@ public class ControladorSecuencias : MonoBehaviour
      public GameObject dos;
      public GameObject tres;
      public GameObject cuatro;
+     public GameObject informacion;
      //private Array<GameObject> secuencias;
     void Start()
     {
@@ -21,7 +22,7 @@ public class ControladorSecuencias : MonoBehaviour
         imagen2InitialPos = imagen2.transform.position;
         imagen3InitialPos = imagen3.transform.position;
         imagen4InitialPos = imagen4.transform.position;
-        
+        StartCoroutine(DesaparecerMenuInformacion(informacion));
         
     }
 
@@ -49,6 +50,10 @@ public class ControladorSecuencias : MonoBehaviour
         dos.SetActive(false);
         tres.SetActive(false);
         cuatro.SetActive(false);
+    }
+    public IEnumerator DesaparecerMenuInformacion(GameObject informacion){
+        yield return new WaitForSecondsRealtime(2);
+        informacion.SetActive(false);
     }
     public void DragImagen1(){
         imagen1.transform.position = Input.mousePosition;
